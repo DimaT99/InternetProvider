@@ -1,0 +1,141 @@
+.flex-container {
+    display: flex;
+    border: 1px solid #ccc;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    border: 1px solid #ccc;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    border: 1px solid #ccc;
+    justify-content: center;
+    background-color: honeydew;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.form-row {
+    text-align: center;
+    font-size: 1.1em;
+    padding: 1.5em;
+    border: cyan
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.column-reverse {
+    flex-direction: column-reverse;
+}
+
+.flex-item {
+    text-align: center;
+    font-size: 1.1em;
+    padding: 1.5em;
+    color: white;
+}
+
+.color1 {
+    background-color: lightgreen;
+}
+
+.color2 {
+    background-color: #9BC850;
+}
+
+.color3 {
+    background-color: lightskyblue;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 10px;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    text-align: center;
+    flex-direction: column;
+    color: indigo;
+    letter-spacing: 10px;
+}
+
+.form-control {
+    font-size: large;
+    color: blue;
+    font-width: 400;
+}
+
+article {
+    text-align: center;
+    background-color: yellow;
+    flex: 2 2 12em;
+    padding: 1em;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: Montserrat;
+}
+
+nav,
+aside {
+    flex: 1;
+    background-color: deepskyblue;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 800;
+    color: greenyellow;
+}
+
+nav {
+    order: -1;
+}
+
+header,
+footer {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Montserrat;
+    background-color: lightcyan;
+}
+
+a:link {
+    color: darkblue;
+    text-decoration: none
+}
+
+a:visited {
+    color: blueviolet;
+    text-decoration: none
+}
+
+a:hover {
+    color: green;
+    text-decoration: underline
+}
+
+a:active {
+    color: orange;
+    text-decoration: underline
+}
+
+h3 {
+    background-color: lavender;
+}
