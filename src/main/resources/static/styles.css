@@ -5,9 +5,9 @@
 }
 
 .container {
-    display: flex;
+    display: compact;
     border: 1px solid #ccc;
-    justify-content: center;
+    justify-content: stretch;
 }
 
 .menu {
@@ -39,7 +39,6 @@
 .column-reverse {
     flex-direction: column-reverse;
 }
-
 .flex-item {
     text-align: center;
     font-size: 1.1em;
@@ -97,10 +96,10 @@ nav,
 aside {
     flex: 1;
     background-color: deepskyblue;
-    text-align: center;
-    font-size: 64px;
-    font-weight: 800;
-    color: greenyellow;
+    text-align: left;
+    font-size: 25px;
+    font-weight: 10;
+    color: blue;
 }
 
 nav {

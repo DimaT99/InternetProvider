@@ -4,6 +4,9 @@ import com.example.internet_provider.entity.Role;
 import com.example.internet_provider.entity.Subscriber;
 import com.example.internet_provider.repo.SubscriberRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -36,20 +39,24 @@ public class SubscriberService implements UserDetailsService {
         return (UserDetails) subscriber;
     }
 
-    public boolean addUser(Subscriber subscriber) {
+    public boolean addUser(final Subscriber subscriber, final boolean isAdmin) {
         Subscriber userFromDb = subscriberRepo.findByUsername(subscriber.getUsername());
 
         if (userFromDb != null) {
             return false;
         }
 
-        subscriber.setRoles(Collections.singleton(Role.USER));
+        if (isAdmin) {
+            subscriber.setRoles(Collections.singleton(Role.ADMIN));
+        } else {
+            subscriber.setRoles(Collections.singleton(Role.USER));
+        }
+
         subscriber.setPassword(passwordEncoder.encode(subscriber.getPassword()));
 
         subscriberRepo.save(subscriber);
 
         return true;
     }
-
 
 }
