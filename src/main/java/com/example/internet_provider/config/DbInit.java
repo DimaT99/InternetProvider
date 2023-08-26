@@ -1,6 +1,8 @@
 package com.example.internet_provider.config;
 
+import com.example.internet_provider.entity.Subscriber;
 import com.example.internet_provider.entity.Tariff;
+import com.example.internet_provider.service.SubscriberService;
 import com.example.internet_provider.service.TariffService;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +15,7 @@ public class DbInit {
     private final TariffService tariffService;
 
     private Random random = new Random();
+
     public DbInit(final TariffService tariffService) {
         this.tariffService = tariffService;
     }
@@ -20,7 +23,7 @@ public class DbInit {
     @PostConstruct
     private void postConstruct() {
         for (int i = 0; i < 10; i++) {
-            final Tariff tariff = new Tariff() ;
+            final Tariff tariff = new Tariff();
             tariff.setName("Tariff " + random.nextInt(1, 15));
             tariff.setSpeed(random.nextInt(90, 100));
             tariff.setPrice(random.nextDouble(200, 300));

@@ -1,19 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Online school</title>
-    <link rel="stylesheet" type="text/css" href="../static/styles.css"/>
-</head>
+<#include "parts/security.ftlh">
+<#import "parts/common.ftlh" as c>
+<@c.page>
 
+<div></div>
 <body>
 <div class="main-content color1">
     <h1>Internet Provider</h1>
 </div>
-
+<div>
+    <#if known>
+        Hello ${user.getEmail()}!
+    <#else>
+        Hello unknown!
+    </#if>
+</div>
 <div class="menu">
     <h2>Перегляд даних по категоріям</h2>
 </div>
@@ -58,4 +58,4 @@
 </footer>
 
 </body>
-</html>
+</@c.page>

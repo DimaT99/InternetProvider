@@ -2,10 +2,8 @@ package com.example.internet_provider.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Entity
 @Data
 public class Tariff {
@@ -15,5 +13,7 @@ public class Tariff {
     private String name;
     private double price;
     private int speed;
+    @OneToOne
+    private Subscriber subscriber;
 
 }
