@@ -21,7 +21,8 @@
                 </#if>
             <#else>
                 <a class="nav-item nav-link" href="/registration">registration</a>
-                <a class="nav-item nav-link" href="/login">login</a>
+                <a class="nav-item nav-link" href="/registration">Оплата</a>
+                <a class="nav-item nav-link" href="/login">Особистий кабінет</a>
             </#if>
         </div>
     </div>

@@ -4,9 +4,6 @@ import com.example.internet_provider.entity.Role;
 import com.example.internet_provider.entity.Subscriber;
 import com.example.internet_provider.repo.SubscriberRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,6 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SubscriberService implements UserDetailsService {
@@ -38,7 +37,9 @@ public class SubscriberService implements UserDetailsService {
 
         return (UserDetails) subscriber;
     }
-
+    public List<Subscriber> getSubscriber() {
+        return subscriberRepo.findAll();
+    }
     public boolean addUser(final Subscriber subscriber, final boolean isAdmin) {
         Subscriber userFromDb = subscriberRepo.findByUsername(subscriber.getUsername());
 
@@ -58,5 +59,11 @@ public class SubscriberService implements UserDetailsService {
 
         return true;
     }
+    public Optional<Subscriber> getSubscriberById(final Integer id) {
+        return subscriberRepo.findById(id);
+    }
 
+    public void deleteSubscriber(final Subscriber subscriber) {
+        subscriberRepo.delete(subscriber);
+    }
 }
