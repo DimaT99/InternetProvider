@@ -26,6 +26,9 @@ public class SubscriberController {
     @GetMapping("profile")
     public String getProfile(Model model, @AuthenticationPrincipal Subscriber subscriber) {
         model.addAttribute("username", subscriber.getUsername());
+        model.addAttribute("firstname", subscriber.getFirstname());
+        model.addAttribute("lastname", subscriber.getLastname());
+        model.addAttribute("password", subscriber.getPassword());
         model.addAttribute("email", subscriber.getEmail());
         return "profile";
     }

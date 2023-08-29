@@ -1,10 +1,12 @@
 package com.example.internet_provider.config;
 
+import com.example.internet_provider.entity.Role;
 import com.example.internet_provider.entity.Subscriber;
 import com.example.internet_provider.service.SubscriberService;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.Collections;
 import java.util.Random;
 
 @Component
@@ -22,6 +24,8 @@ public class DbInit2 {
         final Subscriber user = new Subscriber();
         user.setEmail("user@gmail.com");
         user.setUsername("cat");
+        user.setFirstname("Bob");
+        user.setLastname("Sponge");
         user.setPassword("cat");
 
         subscriberService.addUser(user, false);
@@ -29,6 +33,8 @@ public class DbInit2 {
         final Subscriber admin = new Subscriber();
         admin.setEmail("admin@gmail.com");
         admin.setUsername("admin");
+        admin.setFirstname("admin");
+        admin.setLastname("admin");
         admin.setPassword("admin");
 
         subscriberService.addUser(admin, true);

@@ -19,10 +19,8 @@
 </div>
 <div class="container">
     <ul>
-        <li><a href="/spring" target="_parent">Інформація про
-                курси</a></li>
         <li><a href="/spring" target="_parent">Інформація
-                про вчителів</a></li>
+                про послуги</a></li>
         <li><a href="/tariffs" target="_parent">Інформація
                 про тарифи</a></li>
     </ul>

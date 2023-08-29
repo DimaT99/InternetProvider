@@ -28,14 +28,14 @@ public class TariffController {
     }
 
     @GetMapping("/tariffs")
-    public String getBooks(Model model) {
+    public String getTariffs(Model model) {
         final List<Tariff> tariffs = tariffService.getTariff();
         model.addAttribute("tariffs", tariffs);
         return "all-tariffs";
     }
 
     @GetMapping("/tariff-page")
-    public String getAllTrees(Model model,
+    public String getAllTariffs(Model model,
                               @RequestParam(value = "page", defaultValue = "0") int page) {
         int pageSize = 5;
         Page<Tariff> tariffPage = tariffService.getTariffs(page, pageSize);
@@ -47,7 +47,7 @@ public class TariffController {
     }
 
     @GetMapping("/tariffs/{id}")
-    public String getTariffs(Model model, @PathVariable Integer id) {
+    public String getTariff(Model model, @PathVariable Integer id) {
         final Optional<Tariff> tariffById = tariffService.getTariffById(id);
         final Tariff tariff = tariffById.orElse(null);
         model.addAttribute("tariff", tariff);
@@ -56,7 +56,7 @@ public class TariffController {
     }
 
     @GetMapping("/tariff")
-    public String formForTree(Model model) {
+    public String formForTariff(Model model) {
         return "tariffserv";
     }
 
@@ -88,7 +88,7 @@ public class TariffController {
     }
 
     @GetMapping("/tariffs/delete/{id}")
-    public String deleteTree(Model model, @PathVariable Integer id) {
+    public String deleteTariff(Model model, @PathVariable Integer id) {
         final Optional<Tariff> tariffById = tariffService.getTariffById(id);
         final Tariff tariff = tariffById.orElse(null);
         tariffService.deleteTariff(tariff);
